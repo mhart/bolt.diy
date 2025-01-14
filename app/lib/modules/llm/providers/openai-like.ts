@@ -12,7 +12,20 @@ export default class OpenAILikeProvider extends BaseProvider {
     apiTokenKey: 'OPENAI_LIKE_API_KEY',
   };
 
-  staticModels: ModelInfo[] = [];
+  staticModels: ModelInfo[] = [
+    {
+      name: '@cf/meta/llama-3.3-70b-instruct-fp8-fast',
+      label: '@cf/meta/llama-3.3-70b-instruct-fp8-fast',
+      provider: 'OpenAILike',
+      maxTokenAllowed: 8000,
+    },
+    {
+      name: '@cf/meta/llama-3.1-8b-instruct-fast',
+      label: '@cf/meta/llama-3.1-8b-instruct-fast',
+      provider: 'OpenAILike',
+      maxTokenAllowed: 8000,
+    },
+  ];
 
   async getDynamicModels(
     apiKeys?: Record<string, string>,
